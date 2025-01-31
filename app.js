@@ -18,16 +18,16 @@ let sounds = [];
 // Loaders
 function preload() {
   for (let i = 0; i < 12; i++) {
-    iconImages[i] = loadImage('./static/textures/icon_' + i + '.png');
+    iconImages[i] = loadImage('./textures/icon_' + i + '.png');
   }
-  for (let i = 0; i < 2; i++) {
-    crackImages[i] = loadImage('./static/textures/dp_' + i + '.png');
+  for (let i = 0; i < 13; i++) {
+    crackImages[i] = loadImage('./textures/dp_' + i + '.png');
   }
-  for (let i = 0; i < 168; i++) {
-    sounds[i] = loadSound('./static/audio/' + i + '.mp3');
+  for (let i = 0; i < 70; i++) {
+    sounds[i] = loadSound('./audio/' + i + '.mp3');
   }
-  ambientAudio = loadSound('./static/audio/fallingRocksAmbient.mp3');
-  bgVideo = createVideo('./static/fallingRocks_background_0.mp4');
+  ambientAudio = loadSound('./audio/fallingRocksAmbient.mp3');
+  // bgVideo = createVideo('./fallingRocks_background_0.mp4');
   //   bgShader = loadShader('./shaders/shader.vert', './shaders/shader.frag');
 }
 
@@ -61,8 +61,8 @@ function setup() {
   // Scene settings
   noFill();
   noStroke();
-  bgVideo.hide();
-  bgVideo.loop();
+  // bgVideo.hide();
+  // bgVideo.loop();
   ambientAudio.setVolume(0.1);
   ambientAudio.play();
   ambientAudio.loop();
@@ -94,7 +94,7 @@ function draw() {
    */
   // bgShader.setUniform('millis', millis());
   push();
-  texture(bgVideo);
+  // texture(bgVideo);
   translate(0, 0, -2500);
   plane(sizes.width * 6, sizes.height * 6);
   pop();
