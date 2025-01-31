@@ -26,7 +26,7 @@ function preload() {
     sounds[i] = loadSound("./audio/" + i + ".mp3");
   }
   ambientAudio = loadSound("./audio/fallingRocksAmbient.mp3");
-  bgVideo = createVideo("./textures/Footage_shorter.mp4");
+  bgVideo = createVideo("./Footage_shorter.mp4");
 }
 
 /**
