@@ -17,16 +17,16 @@ let sounds = [];
 // Loaders
 function preload() {
   for (let i = 0; i < 12; i++) {
-    iconImages[i] = loadImage("./textures/icon_" + i + ".png");
+    iconImages[i] = loadImage('./textures/icon_' + i + '.png');
   }
   for (let i = 0; i < 13; i++) {
-    crackImages[i] = loadImage("./textures/dp_" + i + ".png");
+    crackImages[i] = loadImage('./textures/dp_' + i + '.png');
   }
   for (let i = 0; i < 70; i++) {
-    sounds[i] = loadSound("./audio/" + i + ".mp3");
+    sounds[i] = loadSound('./audio/' + i + '.mp3');
   }
-  ambientAudio = loadSound("./audio/fallingRocksAmbient.mp3");
-  bgVideo = createVideo("./Footage_shorter.mp4");
+  ambientAudio = loadSound('./audio/fallingRocksAmbient.mp3');
+  bgVideo = createVideo('./background.mp4');
 }
 
 /**
@@ -34,13 +34,13 @@ function preload() {
  */
 function setup() {
   // Canvas
-  const myCanvas = document.querySelector("canvas.webgl");
+  const myCanvas = document.querySelector('canvas.webgl');
   createCanvas(sizes.width, sizes.height, WEBGL, myCanvas);
 
   // Get current date
   const startDay = 26;
   const today = new Date();
-  const dd = String(today.getDate()).padStart(2, "0");
+  const dd = String(today.getDate()).padStart(2, '0');
   // const mm = String(today.getMonth() + 1).padStart(2, '0');
   // const yyyy = today.getFullYear();
   const dayDiff = dd - startDay;
