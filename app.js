@@ -10,6 +10,7 @@ const impactProb = 0.15;
 let bgVideo, ambientAudio;
 let iconImages = [];
 let crackImages = [];
+let bgImages = [];
 let icons = [];
 let cracks = [];
 let sounds = [];
@@ -22,11 +23,14 @@ function preload() {
   for (let i = 0; i < 13; i++) {
     crackImages[i] = loadImage('./textures/dp_' + i + '.png');
   }
+  for (let i = 0; i < 6; i++) {
+    bgImages[i] = loadImage('./textures/bg_' + i + '.jpg');
+  }
   for (let i = 0; i < 70; i++) {
     sounds[i] = loadSound('./audio/' + i + '.mp3');
   }
   ambientAudio = loadSound('./audio/fallingRocksAmbient.mp3');
-  bgVideo = createVideo('./background_1.webm');
+  // bgVideo = createVideo('./background_1.webm');
 }
 
 /**
@@ -59,8 +63,8 @@ function setup() {
   // Scene settings
   noFill();
   noStroke();
-  bgVideo.hide();
-  bgVideo.loop();
+  // bgVideo.hide();
+  // bgVideo.loop();
   ambientAudio.setVolume(0.1);
   ambientAudio.play();
   ambientAudio.loop();
@@ -92,7 +96,7 @@ function draw() {
    */
   // bgShader.setUniform('millis', millis());
   push();
-  texture(bgVideo);
+  texture(bgImages[0]);
   translate(0, 0, -2500);
   plane(sizes.width * 6, sizes.height * 6);
   pop();
