@@ -176,6 +176,7 @@ class Icon {
     }
   }
   placeCrack() {
+    if (cracks.length >= 100) cracks.shift();
     // method for creating a crack at this.x, this.y; w/ probability
     let crack = new Crack(
       crackImages[Math.floor(Math.random() * crackImages.length)],
