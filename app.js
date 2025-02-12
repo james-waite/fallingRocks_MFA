@@ -96,7 +96,7 @@ function draw() {
    */
   // bgShader.setUniform('millis', millis());
   push();
-  texture(bgImages[0]);
+  texture(bgImages[5]);
   translate(0, 0, -2500);
   plane(sizes.width * 6, sizes.height * 6);
   pop();
